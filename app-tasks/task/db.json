@@ -1,4 +1,14 @@
 {
-    "tasks":[],
-    "users":[]
+  "tasks": [
+    {
+      "conditions": true,
+      "period": "Semestre 3",
+      "name": "Viviana",
+      "email": "olarte@viviana.com",
+      "description": "formulario pagina web",
+      "type": "typeA",
+      "id": 1
+    }
+  ],
+  "users": []
 }

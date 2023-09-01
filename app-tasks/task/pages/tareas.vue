@@ -28,11 +28,27 @@
 
             <v-btn type="submit" >Enviar</v-btn>
         </form>
+
+        <v-btn @click="getTasks()">Obtener tareas</v-btn>
+        
+        <ul>
+            <li v-for="task in tasks" :key="task.id">
+                <b>
+                    {{ task.id }}
+                </b>
+                <br>
+                {{ task.name }}
+                <br>
+                {{ task.period }}
+
+            </li>
+        </ul>
     </div>
 </template>
 <script setup>
 import axios from "axios";
 const user = ref({ conditions: true, period: '1'})
+const tasks = ref({})
 
 const saveUser = async () => {
     console.log(user.value);
@@ -41,5 +57,13 @@ const saveUser = async () => {
 }
 const updatePeriod = () => {
     console.log(user.value);
+}
+const getTasks = async () => {
+    try {
+        const result = await axios.get("http://localhost:3001/tasks", user.value)
+        tasks.value = result.data
+    } catch (error) {
+        console.log(error);
+    }
 }
 </script>
