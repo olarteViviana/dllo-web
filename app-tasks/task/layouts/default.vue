@@ -1,13 +1,21 @@
 <template>
-    <div>
-        <h1>{{ titleApp }}</h1>
-        <NuxtLink class="links" to="/">Inicio</NuxtLink>
-        <NuxtLink class="links" to="/tareas">Tareas</NuxtLink>
-        <NuxtLink class="links" to="/docs/ayuda">Ayuda</NuxtLink>
-        <span>Likes:{{ likes }}</span>
-        <button @click="incrementLikes">Me gusta</button>
-        <slot />
-    </div>
+    <v-layout class="rounded rounded-md">
+        <v-app-bar :title="titleApp"></v-app-bar>
+        <!-- <h1>{{ titleApp }}</h1> -->
+        <v-navigation-drawer>
+            <v-list>
+                <!-- Navegación -->
+                <v-list-item title="Inicio" to="/"></v-list-item>
+                <v-list-item title="Tareas" to="/tareas"></v-list-item>
+                <v-list-item title="Ayuda" to="/docs/ayuda"></v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+
+        <v-main class="d-flex align-center justify-center">
+            <!-- slot: Carga el contenido de la página (pages/..)-->
+            <slot />
+        </v-main>
+    </v-layout>
 </template>
 <script setup>
 const titleApp = ref("App de Tareas")
