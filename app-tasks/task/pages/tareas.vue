@@ -1,5 +1,26 @@
 <template>
     <div>
+        <div class="text-center">
+        <v-btn
+            color="primary"
+            @click="dialog = true">
+            Open Dialog
+        </v-btn>
+
+        <v-dialog
+            v-model="dialog"
+            width="auto"
+            >
+            <v-card>
+                <v-card-text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </v-card-text>
+                <v-card-actions>
+                    <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+    </div>
         <h1>Pagina de tareas</h1>
         <p>Formulario para la gestión de tareas de los estudiantes</p>
 

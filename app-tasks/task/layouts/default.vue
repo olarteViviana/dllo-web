@@ -5,13 +5,13 @@
         <v-navigation-drawer>
             <v-list>
                 <!-- Navegación -->
-                <v-list-item title="Inicio" to="/"></v-list-item>
+                <v-list-item to="/"><v-icon icon="mdi-home"></v-icon> Inicio </v-list-item>
                 <v-list-item title="Tareas" to="/tareas"></v-list-item>
                 <v-list-item title="Ayuda" to="/docs/ayuda"></v-list-item>
             </v-list>
         </v-navigation-drawer>
 
-        <v-main class="d-flex align-center justify-center">
+        <v-main class="align-center justify-center">
             <!-- slot: Carga el contenido de la página (pages/..)-->
             <slot />
         </v-main>
